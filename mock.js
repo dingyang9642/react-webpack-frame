@@ -1,46 +1,36 @@
-/**
- * @file mock
- * @author .....
- */
-
-var fs = require('fs');
-
-var path = require('path');
-
 var express = require('express');
-
-
+var bodyParser = require('body-parser');
 var app = express();
+app.use(bodyParser.json());
+// 端口号
+app.listen(8888);
+console.log('server start');
 
-var port = 5000;
-
-var pathes = __dirname.split(path.sep);
-
-pathes.pop();
-
-app.get('/', function (req, res) {
-    res.send('server ok!');
+/******************demo【start】************************/
+// 1、常规mock get
+var demo1 = require('./mock/home/home.json');
+var demo2 = require('./mock/detail/detail.json');
+// 1.1 get方式
+app.get('/prefix/demo1', function (req, res) {
+    res.send(demo1);
 });
-
-// ========================================= 接口配置 begin
-(function () {
-    var readFile = function (file) {
-        return JSON.parse(fs.readFileSync('./mock/' + file, 'utf-8'));
-    };
-    // mock1
-    app.get('/htcx/api/home', function (req, res) {
-        res.json(readFile('home/home.json'));
-    });
-    app.get('/htcx/api/detail', function (req, res) {
-        res.json(readFile('detail/detail.json'));
-    });
-
-})();
-// ========================================= 接口配置 end
-
-app.use(express.static(pathes.join(path.sep)));
-
-// 监听端口
-app.listen(port);
-
-console.log('成功启动：' + port);
+// 1.2 post方式
+app.post('/prefix/demo1', function (req, res) {
+    res.send(demo1);
+});
+// 2、数据返回延迟
+app.get('/prefix/demo2', function (req, res) {
+    setTimeout(function () {
+        res.send(demo1);
+    }, 3000);
+});
+// 3、根据条件返回不同json get方法
+app.get('/prefix/demo3', function (req, res) {
+    if (req.query.type === '1') {
+        res.send(demo1);
+    }
+    else {
+        res.send(demo2);
+    }
+});
+/******************demoo【end】************************/

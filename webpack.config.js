@@ -5,6 +5,12 @@ var HtmlwebpackPlugin = require('html-webpack-plugin');  // 生成html文件
 /****项目相关配置(app-config)****/
 const APP_NAME_EN = 'demo-test';
 const APP_NAME_CN = '演示demo';
+const PROXY_CONFIG = {  // api匹配规则配置
+    '/prefix/**': {
+        target: 'http://127.0.0.1:8888',
+        secure: false
+    }
+};
 
 
 
@@ -20,7 +26,7 @@ module.exports = {
         filename: '[name].min.js?[hash]',
         // cmd、amd异步加载脚本配置名称
         chunkFilename: '[name].chunk.js?[hash]',
-        publicPath: ''
+        publicPath: '/'
     },
     module: {
         loaders:[
@@ -47,13 +53,7 @@ module.exports = {
         hot: false,
         inline: true,
         progress: true,
-        // ajax 代理到5000端口
-        proxy: {
-            '/agri/interface/**': {
-                target: 'http://127.0.0.1:5000',
-                secure: false
-            }
-        },
+        proxy: PROXY_CONFIG,
         host: '0.0.0.0'
     },
     // 生成sourcemap,便于开发调试

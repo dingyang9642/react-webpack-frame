@@ -1,8 +1,9 @@
 var React = require('react');
+var GLOBAL_CONFIG = require('./conf/conf.js');
 var ReactDOM = require('react-dom');
 var Router = require('react-router/lib/Router');
 var browserHistory = require('react-router/lib/browserHistory');
-var projectName = "htcx";
+var projectName = GLOBAL_CONFIG.projectName;
 
 var App = React.createClass({
     render: function() {
@@ -56,5 +57,5 @@ var RootRoute = {
 window.onload = function() {
     ReactDOM.render((
         <Router routes={RootRoute} history={browserHistory}/>
-    ), document.querySelector('#htcx-app'));
+    ), document.querySelector('#ecnu-app'));
 };

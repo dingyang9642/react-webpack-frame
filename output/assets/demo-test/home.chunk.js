@@ -1,6 +1,6 @@
 webpackJsonp([0],{
 
-/***/ 226:
+/***/ 227:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12,15 +12,15 @@ webpackJsonp([0],{
  */
 
 var React = __webpack_require__(21);
-var commonPageStyle = __webpack_require__(229);
-var homePageStyle = __webpack_require__(240);
+var commonPageStyle = __webpack_require__(230);
+var homePageStyle = __webpack_require__(241);
 
 // 首页顶部标题栏部分
-var HeaderElement = __webpack_require__(232);
+var HeaderElement = __webpack_require__(233);
 // 首页中间内容部分
-var ContentElement = __webpack_require__(242);
+var ContentElement = __webpack_require__(243);
 // 首页底部状态栏部分
-var FooterElement = __webpack_require__(235);
+var FooterElement = __webpack_require__(236);
 
 var homeComponent = React.createClass({
     displayName: 'homeComponent',
@@ -48,7 +48,7 @@ module.exports = homeComponent;
 
 /***/ }),
 
-/***/ 227:
+/***/ 228:
 /***/ (function(module, exports) {
 
 /*
@@ -131,7 +131,7 @@ function toComment(sourceMap) {
 
 /***/ }),
 
-/***/ 228:
+/***/ 229:
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -177,7 +177,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(231);
+var	fixUrls = __webpack_require__(232);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -491,13 +491,13 @@ function updateLink (link, options, obj) {
 
 /***/ }),
 
-/***/ 229:
+/***/ 230:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(230);
+var content = __webpack_require__(231);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -505,7 +505,7 @@ var transform;
 var options = {}
 options.transform = transform
 // add the styles to the DOM
-var update = __webpack_require__(228)(content, options);
+var update = __webpack_require__(229)(content, options);
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -523,10 +523,10 @@ if(false) {
 
 /***/ }),
 
-/***/ 230:
+/***/ 231:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(227)(undefined);
+exports = module.exports = __webpack_require__(228)(undefined);
 // imports
 
 
@@ -538,7 +538,7 @@ exports.push([module.i, "* {\n\tmargin: 0;\n\tpadding: 0;\n\tbox-sizing: border-
 
 /***/ }),
 
-/***/ 231:
+/***/ 232:
 /***/ (function(module, exports) {
 
 
@@ -634,14 +634,14 @@ module.exports = function (css) {
 
 /***/ }),
 
-/***/ 232:
+/***/ 233:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var React = __webpack_require__(21);
-var headerPageStyle = __webpack_require__(233);
+var headerPageStyle = __webpack_require__(234);
 
 var headerComponent = React.createClass({
     displayName: 'headerComponent',
@@ -676,17 +676,17 @@ module.exports = headerComponent;
 
 /***/ }),
 
-/***/ 233:
+/***/ 234:
 /***/ (function(module, exports, __webpack_require__) {
 
 var refs = 0;
 var dispose;
-var content = __webpack_require__(234);
+var content = __webpack_require__(235);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) exports.locals = content.locals;
 exports.use = exports.ref = function() {
 	if(!(refs++)) {
-		dispose = __webpack_require__(228)(content, {});
+		dispose = __webpack_require__(229)(content, {});
 	}
 	return exports;
 };
@@ -717,10 +717,10 @@ if(false) {
 
 /***/ }),
 
-/***/ 234:
+/***/ 235:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(227)(undefined);
+exports = module.exports = __webpack_require__(228)(undefined);
 // imports
 
 
@@ -732,14 +732,14 @@ exports.push([module.i, ".header-box {\n\tdisplay: -webkit-flex;\n    display: f
 
 /***/ }),
 
-/***/ 235:
+/***/ 236:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var React = __webpack_require__(21);
-var footerPageStyle = __webpack_require__(236);
+var footerPageStyle = __webpack_require__(237);
 
 var footerComponent = React.createClass({
     displayName: 'footerComponent',
@@ -765,17 +765,17 @@ module.exports = footerComponent;
 
 /***/ }),
 
-/***/ 236:
+/***/ 237:
 /***/ (function(module, exports, __webpack_require__) {
 
 var refs = 0;
 var dispose;
-var content = __webpack_require__(237);
+var content = __webpack_require__(238);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) exports.locals = content.locals;
 exports.use = exports.ref = function() {
 	if(!(refs++)) {
-		dispose = __webpack_require__(228)(content, {});
+		dispose = __webpack_require__(229)(content, {});
 	}
 	return exports;
 };
@@ -806,10 +806,10 @@ if(false) {
 
 /***/ }),
 
-/***/ 237:
+/***/ 238:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(227)(undefined);
+exports = module.exports = __webpack_require__(228)(undefined);
 // imports
 
 
@@ -821,17 +821,17 @@ exports.push([module.i, ".footer-box {\n\tfont-size: 40px;\n\tbackground-color: 
 
 /***/ }),
 
-/***/ 240:
+/***/ 241:
 /***/ (function(module, exports, __webpack_require__) {
 
 var refs = 0;
 var dispose;
-var content = __webpack_require__(241);
+var content = __webpack_require__(242);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) exports.locals = content.locals;
 exports.use = exports.ref = function() {
 	if(!(refs++)) {
-		dispose = __webpack_require__(228)(content, {});
+		dispose = __webpack_require__(229)(content, {});
 	}
 	return exports;
 };
@@ -862,10 +862,10 @@ if(false) {
 
 /***/ }),
 
-/***/ 241:
+/***/ 242:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(227)(undefined);
+exports = module.exports = __webpack_require__(228)(undefined);
 // imports
 
 
@@ -877,14 +877,14 @@ exports.push([module.i, ".home-box {\n\tbackground-color: red;\n}", ""]);
 
 /***/ }),
 
-/***/ 242:
+/***/ 243:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var React = __webpack_require__(21);
-var contentPageStyle = __webpack_require__(243);
+var contentPageStyle = __webpack_require__(244);
 
 var contentComponent = React.createClass({
     displayName: 'contentComponent',
@@ -910,17 +910,17 @@ module.exports = contentComponent;
 
 /***/ }),
 
-/***/ 243:
+/***/ 244:
 /***/ (function(module, exports, __webpack_require__) {
 
 var refs = 0;
 var dispose;
-var content = __webpack_require__(244);
+var content = __webpack_require__(245);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) exports.locals = content.locals;
 exports.use = exports.ref = function() {
 	if(!(refs++)) {
-		dispose = __webpack_require__(228)(content, {});
+		dispose = __webpack_require__(229)(content, {});
 	}
 	return exports;
 };
@@ -951,10 +951,10 @@ if(false) {
 
 /***/ }),
 
-/***/ 244:
+/***/ 245:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(227)(undefined);
+exports = module.exports = __webpack_require__(228)(undefined);
 // imports
 
 
